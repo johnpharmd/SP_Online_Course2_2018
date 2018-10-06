@@ -67,11 +67,11 @@ if __name__ == "__main__":
 
     start = time.time()
     sources = threading_api(get_sources(), N, thread_count)
-
+    # titles = threading_api(get_articles(source), N, thread_count)
     art_count = 0
     word_count = 0
     for source in sources:
-        titles = threading_api(get_articles(source), N, thread_count)
+        titles = get_articles(source)
         art_count += len(titles)
         word_count += count_word('trump', titles)
         # print('Output with N=%(N)d : %(x)f' %
